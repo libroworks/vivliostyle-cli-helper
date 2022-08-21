@@ -10,7 +10,7 @@ const vivliostyleConfig = {
   // toc: 'toc.html',
   // tocTitle: '目次',
   output: [
-    '30_pdf/merged_output.pdf',
+    'merged_output.pdf',
   ],
 };
 
