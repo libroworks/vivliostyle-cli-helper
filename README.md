@@ -3,64 +3,50 @@ Vivliostyle CLIのコマンド発行を代行する機能拡張です。
 
 https://docs.vivliostyle.org/ja/vivliostyle-cli
 
+事前に[Node.js](https://nodejs.org/ja/)をインストールし、ターミナルからvivliostyle CLIをインストールしてください。
+
+```
+npm install -g @vivliostyle/cli
+```
+
 ## Features
+コマンドパレットから4つのコマンドを選択できます。previewと名の付くものはVivliostyleプレビューを表示し、buildと名の付くものはPDFを生成します。
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+![command pallet](docimg1.png)
 
-For example if there is an image subfolder under your extension project workspace:
+また、現在エディタで開いているファイル（HTMLまたはMakrdown）を対象にするものと、vivliostyle.confg.jsの設定を対象にするものがあります。vivliostyle.config.jsでは複数ファイルを連結できます。
 
-\!\[feature X\]\(images/feature-x.png\)
+#### vivliostyle.config.jsの例
+```
+// @ts-check
+const vivliostyleConfig = {
+  entry: [
+    // 目次の生成テスト
+    // { rel: 'contents', theme: '20_genkou/_css/main.css' },
+    'formattest_chap1.html',
+    // 'formattest_chap2.html'
+  ], 
+  // toc: 'toc.html',
+  // tocTitle: '目次',
+  output: [
+    '30_pdf/merged_output.pdf',
+  ],
+};
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+module.exports = vivliostyleConfig;
+```
 
-## Requirements
+### プレビュー
+プレビューコマンドを実行すると、Webブラウザが起動してプレビューが表示されます。HTMLやCSSファイルの更新に伴ってプレビューも更新されます。
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+![Preview](docimg2.png)
 
-## Extension Settings
+プレビューの表示中は、VSCodeのターミナルに「Up and running([ctrl+c] to quit)」と表示されています。ターミナルにカーソルがある状態でCtrl+Cキーを押すとプレビューを終了します。
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+プレビューが終了するまで他のコマンドは実行できません。
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
+### 0.0.1
 
 Initial release of ...
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
