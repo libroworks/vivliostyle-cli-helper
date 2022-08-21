@@ -9,22 +9,70 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vivliostyle-cli-helper" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('vivliostyle-cli-helper.helloWorld', function () {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from vivliostyle-cli-helper!');
+		callShell('ls');
+		callShell('vivliostyle');
+		callShell('npm list @vivliostyle/cli')
 	});
-
 	context.subscriptions.push(disposable);
+
+	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.installcLI', function(){
+		callShell('npm install -g @vivliostyle/cli');
+	}));
+	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.previewByConfig', function(){
+		callShell('vivliostyle preview');
+	}));
+	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.buildByConfig', function(){
+		callShell('vivliostyle build');
+	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.previewThis', function(){
+    const editor = vscode.window.activeTextEditor;
+    if (checkEditorPath(editor) === false) return;
+    // プレビューしたいパスやVSmodeを設定
+    const contentpath = editor.document.fileName;
+    console.log(contentpath);
+		callShell(`vivliostyle preview ${contentpath}`);
+	}));
+	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.buildThis', function(){
+    const editor = vscode.window.activeTextEditor;
+    if (checkEditorPath(editor) === false) return;
+    // プレビューしたいパスやVSmodeを設定
+    const contentpath = editor.document.fileName;
+    console.log(contentpath);
+		callShell(`vivliostyle build ${contentpath}`);
+	}));
+
+
+	function callShell(shellcommand){
+		const term = vscode.window.activeTerminal ? vscode.window.activeTerminal : vscode.window.createTerminal();
+		term.show();
+		// PowerShellかつvivliostyleスクリプトの実行時のみ許可が必要
+		if(term.creationOptions.shellPath.toString().includes('powershell') && shellcommand.indexOf('vivliostyle') === 0){
+			term.sendText(`PowerShell -ExecutionPolicy RemoteSigned ${shellcommand}`);
+		} else {
+			term.sendText(shellcommand);
+		}
+	}
+
+	function checkEditorPath(editor) {
+    if (editor === null || editor === undefined) return false;
+    const path = editor.document.fileName;
+    if (!path) {
+        vscode.window.showWarningMessage('ファイルを保存してから実行してください');
+        return false;
+    }
+    if (!(path.endsWith('.md') || (path.endsWith('.html')))) {
+        vscode.window.showWarningMessage('MardownファイルやHTMLファイルではありません');
+        return false;
+    }
+    return true;
+  }
+
 }
 
 // this method is called when your extension is deactivated

@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+
+@page {
+    counter-reset: chapcount 2;
+}
+
+@page :right {
+    @right-top {
+        content: counter(chapcount);
+        width: 12mm;
+        margin-left: 5mm;
+        margin-top: 30mm;
+        padding-left: 1mm;
+        height: 12mm;
+        border: solid 0.5mm #000;
+        background-color: #DDD;
+        font-family: var(--textfont-b);
+        text-align: left;
+        font-size: 18q;
+        line-height: 35q;
+        color: #000;
+        text-indent: 3mm;
+    }
+
+    @right-middle {
+        content: string(heading, first);
+        width: 2.5mm;
+        margin-right: 8mm;
+        margin-left: 9mm;
+        margin-top: 24mm;
+        writing-mode: vertical-rl;
+        vertical-align: top;
+        font-family: var(--textfont-b);
+        font-size: 10q;
+        line-height: 10q;
+        color: #4d4d4d;
+        z-index: -1;
+        /* 章扉で表示させない */
+    }
+}
+
+@page: nth(1) {
+    @right-top {
+        content: none;
+    }
+
+    @right-middle {
+        content: none;
+    }
+}
+
+/* 開始ノンブル変更
+  /* @page:first{
+      counter-reset: page 10;
+  } */

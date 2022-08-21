@@ -1,4 +1,9 @@
 {
+  "publisher": "Libroworks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/libroworks/vivliostyle-cli-helper"
+  },
   "name": "vivliostyle-cli-helper",
   "displayName": "vivliostyle-cli-helper",
   "description": "vivliostyle cli for vscode",
@@ -10,14 +15,35 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vivliostyle-cli-helper.helloWorld"
+    "onCommand:vivliostyle-cli-helper.previewByConfig",
+    "onCommand:vivliostyle-cli-helper.buildByConfig",
+    "onCommand:vivliostyle-cli-helper.previewThis",
+    "onCommand:vivliostyle-cli-helper.buildThis"
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "vivliostyle-cli-helper.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "vivliostyle-cli-helper.previewByConfig",
+        "title": "Preview By config.js",
+        "category": "vivliostyle-cli-helper"
+      },
+      {
+        "command": "vivliostyle-cli-helper.buildByConfig",
+        "title": "Build PDF by config.js",
+        "category": "vivliostyle-cli-helper"
+      },
+      {
+        "command": "vivliostyle-cli-helper.previewThis",
+        "title": "Preview Current File",
+        "category": "vivliostyle-cli-helper"
+      },
+      {
+        "command": "vivliostyle-cli-helper.buildThis",
+        "title": "Build PDF Curennt File",
+        "category": "vivliostyle-cli-helper"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",

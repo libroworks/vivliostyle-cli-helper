@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/* 個々を書き換えるとフォント設定をまとめて変更できる */
+
+/* フォントはcss/fontsフォルダのファイルを直接参照 */
+@font-face {
+    font-family: keyfont;
+    src: url("fonts/keyboard-JP-Regular.otf");
+}
+
+@font-face {
+    font-family: inconsolata;
+    src: url("fonts/Inconsolata-Regular.ttf");
+}
+
+@font-face {
+    font-family: inconsolata-b;
+    src: url("fonts/Inconsolata-Bold.ttf");
+}
+
+@font-face {
+    font-family: notosans-l;
+    src: url("fonts/NotoSansJP-Light.otf");
+}
+
+@font-face {
+    font-family: notosans-r;
+    src: url("fonts/NotoSansJP-Regular.otf");
+}
+
+@font-face {
+    font-family: notosans-m;
+    src: url("fonts/NotoSansJP-Medium.otf");
+}
+
+@font-face {
+    font-family: notosans-b;
+    src: url("fonts/NotoSansJP-Bold.otf");
+}
+
+:root {
+    --codefont: inconsolata;
+    --codefont-b: inconsolata-b;
+    --textfont-l: notosans-l;
+    --textfont-r: notosans-r;
+    --textfont-m: notosans-m;
+    --textfont-b: notosans-b;
+}

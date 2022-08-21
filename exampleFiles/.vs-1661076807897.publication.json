@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "",
+  "dateModified": "2022-08-21T10:17:00.740Z",
+  "name": "Format Test",
+  "readingOrder": [
+    {
+      "url": ".vs-1661076807897.formattest_chap1.html",
+      "name": "Format Test"
+    }
+  ],
+  "resources": [],
+  "links": []
+}

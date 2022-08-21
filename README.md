@@ -1,6 +1,7 @@
 # vivliostyle-cli-helper README
+Vivliostyle CLIのコマンド発行を代行する機能拡張です。
 
-This is the README for your extension "vivliostyle-cli-helper". After writing up a brief description, we recommend including the following sections.
+https://docs.vivliostyle.org/ja/vivliostyle-cli
 
 ## Features
 

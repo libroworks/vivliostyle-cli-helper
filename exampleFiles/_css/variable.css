@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+:root {
+    --page-width: 148mm;
+    --page-height: 210mm;
+    --base-fontsize: 12q;
+    --base-line-height: 19q;
+    --page-nodo: 18mm;
+    --page-koguchi: 16mm;
+    --page-ten: 15mm;
+    --page-chi: 15mm;
+    --content-width: 114mm;
+}
