@@ -20,9 +20,9 @@ function activate(context) {
 	});
 	context.subscriptions.push(disposable);
 
-	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.installcLI', function(){
-		callShell('npm install -g @vivliostyle/cli');
-	}));
+	// context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.installCLI', function(){
+	// 	callShell('npm install -g @vivliostyle/cli');
+	// }));
 	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.previewByConfig', function(){
 		callShell('vivliostyle preview');
 	}));
