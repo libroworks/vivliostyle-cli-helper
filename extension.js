@@ -34,7 +34,7 @@ function activate(context) {
     const editor = vscode.window.activeTextEditor;
     if (checkEditorPath(editor) === false) return;
     // プレビューしたいパスやVSmodeを設定
-    const contentpath = editor.document.fileName;
+    const contentpath = editor.document.fileName.replace(/^[a-z]:/, (d) => d.toUpperCase()); 
     console.log(contentpath);
 		callShell(`vivliostyle preview ${contentpath}`);
 	}));
@@ -52,7 +52,7 @@ function activate(context) {
 		const term = vscode.window.activeTerminal ? vscode.window.activeTerminal : vscode.window.createTerminal();
 		term.show();
 		// PowerShellかつvivliostyleスクリプトの実行時のみ許可が必要
-		if(term.creationOptions.shellPath.toString().includes('powershell') && shellcommand.indexOf('vivliostyle') === 0){
+		if(term.creationOptions.shellPath?.toString().includes('powershell') && shellcommand.indexOf('vivliostyle') === 0){
 			term.sendText(`PowerShell -ExecutionPolicy RemoteSigned ${shellcommand}`);
 		} else {
 			term.sendText(shellcommand);

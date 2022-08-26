@@ -46,6 +46,10 @@ module.exports = vivliostyleConfig;
 プレビューが終了するまで他のコマンドは実行できません。
 
 ## Release Notes
+
+### 0.0.2
+Markdownファイルでプレビューが更新されない問題と、Macでエラーが出ることがある現象を解消
+
 ### 0.0.1
 
 Initial release of ...
