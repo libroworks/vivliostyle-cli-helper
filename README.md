@@ -46,6 +46,9 @@ module.exports = vivliostyleConfig;
 プレビューが終了するまで他のコマンドは実行できません。
 
 ## Release Notes
+### 0.0.3
+- 既存のターミナルを使うのではなく、「vivliostyle-cli-helper」という名前のターミナルを作るようにする
+- ファイル名をダブルクォートで囲む
 
 ### 0.0.2
 Markdownファイルでプレビューが更新されない問題と、Macでエラーが出ることがある現象を解消

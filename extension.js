@@ -36,7 +36,7 @@ function activate(context) {
     // プレビューしたいパスやVSmodeを設定
     const contentpath = editor.document.fileName.replace(/^[a-z]:/, (d) => d.toUpperCase()); 
     console.log(contentpath);
-		callShell(`vivliostyle preview ${contentpath}`);
+		callShell(`vivliostyle preview "${contentpath}"`);
 	}));
 	context.subscriptions.push(vscode.commands.registerCommand('vivliostyle-cli-helper.buildThis', function(){
     const editor = vscode.window.activeTextEditor;
@@ -44,15 +44,15 @@ function activate(context) {
     // プレビューしたいパスやVSmodeを設定
     const contentpath = editor.document.fileName;
     console.log(contentpath);
-		callShell(`vivliostyle build ${contentpath}`);
+		callShell(`vivliostyle build "${contentpath}"`);
 	}));
 
 
 	function callShell(shellcommand){
-		const term = vscode.window.activeTerminal ? vscode.window.activeTerminal : vscode.window.createTerminal();
+		const term = vscode.window.activeTerminal?.name === 'vivliostyle-cli-helper' ? vscode.window.activeTerminal : vscode.window.createTerminal('vivliostyle-cli-helper');
 		term.show();
 		// PowerShellかつvivliostyleスクリプトの実行時のみ許可が必要
-		if(term.creationOptions.shellPath?.toString().includes('powershell') && shellcommand.indexOf('vivliostyle') === 0){
+		if(vscode.env.shell.includes('powershell') && shellcommand.indexOf('vivliostyle') === 0){
 			term.sendText(`PowerShell -ExecutionPolicy RemoteSigned ${shellcommand}`);
 		} else {
 			term.sendText(shellcommand);
