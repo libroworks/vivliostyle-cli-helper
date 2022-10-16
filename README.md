@@ -46,6 +46,9 @@ module.exports = vivliostyleConfig;
 プレビューが終了するまで他のコマンドは実行できません。
 
 ## Release Notes
+### 0.0.4
+コマンド名を実際のvivliostyleのコマンドに似せた
+
 ### 0.0.3
 - 既存のターミナルを使うのではなく、「vivliostyle-cli-helper」という名前のターミナルを作るようにする
 - ファイル名をダブルクォートで囲む

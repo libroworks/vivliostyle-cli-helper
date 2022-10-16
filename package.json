@@ -7,7 +7,7 @@
   "name": "vivliostyle-cli-helper",
   "displayName": "vivliostyle-cli-helper",
   "description": "vivliostyle cli for vscode",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -25,22 +25,22 @@
     "commands": [
       {
         "command": "vivliostyle-cli-helper.previewByConfig",
-        "title": "Preview by config.js",
+        "title": "vivliostyle preview (with config)",
         "category": "vivliostyle-cli-helper"
       },
       {
         "command": "vivliostyle-cli-helper.buildByConfig",
-        "title": "Build PDF by config.js",
+        "title": "vivliostyle build (with config)",
         "category": "vivliostyle-cli-helper"
       },
       {
         "command": "vivliostyle-cli-helper.previewThis",
-        "title": "Preview from Current File",
+        "title": "vivliostyle preview (Current File)",
         "category": "vivliostyle-cli-helper"
       },
       {
         "command": "vivliostyle-cli-helper.buildThis",
-        "title": "Build PDF from Curennt File",
+        "title": "vivliostyle build (Curennt File)",
         "category": "vivliostyle-cli-helper"
       }
     ]
