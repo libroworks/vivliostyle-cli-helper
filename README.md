@@ -46,6 +46,9 @@ module.exports = vivliostyleConfig;
 プレビューが終了するまで他のコマンドは実行できません。
 
 ## Release Notes
+### 0.0.5
+README更新
+
 ### 0.0.4
 コマンド名を実際のvivliostyleのコマンドに似せた
 
