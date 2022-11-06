@@ -7,7 +7,7 @@
   "name": "vivliostyle-cli-helper",
   "displayName": "vivliostyle-cli-helper",
   "description": "vivliostyle cli for vscode",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -18,11 +18,17 @@
     "onCommand:vivliostyle-cli-helper.previewByConfig",
     "onCommand:vivliostyle-cli-helper.buildByConfig",
     "onCommand:vivliostyle-cli-helper.previewThis",
-    "onCommand:vivliostyle-cli-helper.buildThis"
+    "onCommand:vivliostyle-cli-helper.buildThis",
+    "onCommand:vivliostyle-cli-helper.installCLI"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
+      {
+        "command": "vivliostyle-cli-helper.installCLI",
+        "title": "install/update vivliostyle-cli",
+        "category": "vivliostyle-cli-helper"
+      },
       {
         "command": "vivliostyle-cli-helper.previewByConfig",
         "title": "vivliostyle preview (with config)",

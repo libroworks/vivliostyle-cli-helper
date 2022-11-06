@@ -46,6 +46,9 @@ module.exports = vivliostyleConfig;
 プレビューが終了するまで他のコマンドは実行できません。
 
 ## Release Notes
+### 0.0.6
+vivliosytle-cliのインストールコマンドをVSCodeから実行できるようにした
+
 ### 0.0.5
 README更新
 
