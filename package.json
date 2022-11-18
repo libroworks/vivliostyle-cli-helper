@@ -7,7 +7,7 @@
   "name": "vivliostyle-cli-helper",
   "displayName": "vivliostyle-cli-helper",
   "description": "vivliostyle cli for vscode",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -48,6 +48,48 @@
         "command": "vivliostyle-cli-helper.buildThis",
         "title": "vivliostyle build (Curennt File)",
         "category": "vivliostyle-cli-helper"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "vivliostyle-cli-submenu1",
+          "group": "vivliostyle cli helper",
+          "when": "resourceLangId == markdown || resourceLangId == html"
+        }
+      ],
+      "vivliostyle-cli-submenu1": [
+        {
+          "command": "vivliostyle-cli-helper.previewByConfig",
+          "group": "1_vivliostyle-cli",
+          "when": "resourceLangId == markdown || resourceLangId == html"
+        },
+        {
+          "command": "vivliostyle-cli-helper.buildByConfig",
+          "group": "1_vivliostyle-cli",
+          "when": "resourceLangId == markdown || resourceLangId == html"
+        },
+        {
+          "command": "vivliostyle-cli-helper.previewThis",
+          "group": "0_vivliostyle-cli",
+          "when": "resourceLangId == markdown || resourceLangId == html"
+        },
+        {
+          "command": "vivliostyle-cli-helper.buildThis",
+          "group": "0_vivliostyle-cli",
+          "when": "resourceLangId == markdown || resourceLangId == html"
+        },
+        {
+          "command": "vivliostyle-cli-helper.installCLI",
+          "group": "2_vivliostyle-cli",
+          "when": "resourceLangId == markdown || resourceLangId == html"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "vivliostyle-cli-submenu1",
+        "label": "vivliostyle cli helper"
       }
     ]
   },

@@ -67,7 +67,7 @@ function activate(context) {
         return false;
     }
     if (!(path.endsWith('.md') || (path.endsWith('.html')))) {
-        vscode.window.showWarningMessage('MardownファイルやHTMLファイルではありません');
+        vscode.window.showWarningMessage('MarkdownファイルやHTMLファイルではありません');
         return false;
     }
     return true;

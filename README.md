@@ -9,6 +9,8 @@ https://docs.vivliostyle.org/ja/vivliostyle-cli
 npm install -g @vivliostyle/cli
 ```
 
+
+
 ## Features
 コマンドパレットから4つのコマンドを選択できます。previewと名の付くものはVivliostyleプレビューを表示し、buildと名の付くものはPDFを生成します。
 
@@ -45,7 +47,14 @@ module.exports = vivliostyleConfig;
 
 プレビューが終了するまで他のコマンドは実行できません。
 
+### 右クリックメニュー対応
+![Preview](docimg2.png)
+
+
 ## Release Notes
+### 0.0.7
+右クリックメニュー対応
+
 ### 0.0.6
 vivliosytle-cliのインストールコマンドをVSCodeから実行できるようにした
 
