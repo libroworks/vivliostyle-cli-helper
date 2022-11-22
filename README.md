@@ -52,6 +52,11 @@ module.exports = vivliostyleConfig;
 
 
 ## Release Notes
+### 0.0.8
+build current時に、出力PDF名をソースファイルに合わせる
+
+メニュー名の誤字修正
+
 ### 0.0.7
 右クリックメニュー対応
 

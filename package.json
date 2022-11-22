@@ -7,7 +7,7 @@
   "name": "vivliostyle-cli-helper",
   "displayName": "vivliostyle-cli-helper",
   "description": "vivliostyle cli for vscode",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -46,7 +46,7 @@
       },
       {
         "command": "vivliostyle-cli-helper.buildThis",
-        "title": "vivliostyle build (Curennt File)",
+        "title": "vivliostyle build (Current File)",
         "category": "vivliostyle-cli-helper"
       }
     ],
