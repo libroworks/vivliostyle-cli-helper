@@ -48,10 +48,15 @@ module.exports = vivliostyleConfig;
 プレビューが終了するまで他のコマンドは実行できません。
 
 ### 右クリックメニュー対応
-![Preview](docimg2.png)
+MarkdownまたはHTMLファイルを右クリックして実行できるようにしました。
+
+![Preview](docimg3.png)
 
 
 ## Release Notes
+### 0.0.9
+コマンド名に日本語追加
+
 ### 0.0.8
 build current時に、出力PDF名をソースファイルに合わせる
 

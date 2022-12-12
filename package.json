@@ -7,7 +7,7 @@
   "name": "vivliostyle-cli-helper",
   "displayName": "vivliostyle-cli-helper",
   "description": "vivliostyle cli for vscode",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -31,22 +31,22 @@
       },
       {
         "command": "vivliostyle-cli-helper.previewByConfig",
-        "title": "vivliostyle preview (with config)",
+        "title": "連結プレビューvivliostyle preview (with config)",
         "category": "vivliostyle-cli-helper"
       },
       {
         "command": "vivliostyle-cli-helper.buildByConfig",
-        "title": "vivliostyle build (with config)",
+        "title": "連結ビルドvivliostyle build (with config)",
         "category": "vivliostyle-cli-helper"
       },
       {
         "command": "vivliostyle-cli-helper.previewThis",
-        "title": "vivliostyle preview (Current File)",
+        "title": "これプレビューvivliostyle preview (Current File)",
         "category": "vivliostyle-cli-helper"
       },
       {
         "command": "vivliostyle-cli-helper.buildThis",
-        "title": "vivliostyle build (Current File)",
+        "title": "これビルドvivliostyle build (Current File)",
         "category": "vivliostyle-cli-helper"
       }
     ],
