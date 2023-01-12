@@ -9,7 +9,7 @@ https://docs.vivliostyle.org/ja/vivliostyle-cli
 npm install -g @vivliostyle/cli
 ```
 
-
+※右クリックメニューからの実行も可能です。
 
 ## Features
 コマンドパレットから4つのコマンドを選択できます。previewと名の付くものはVivliostyleプレビューを表示し、buildと名の付くものはPDFを生成します。
@@ -54,6 +54,10 @@ MarkdownまたはHTMLファイルを右クリックして実行できるよう�
 
 
 ## Release Notes
+### 0.0.10
+macOSなどで「npm install -g @vivliostyle/cli」を実行したときにsudoを付けてくれる……かも
+
+
 ### 0.0.9
 コマンド名に日本語追加
 
